@@ -1,11 +1,11 @@
 version: "3.7"
 
 services:
-  dockerskeletal:
+  docslaravelreact:
     build:
       dockerfile: Dockerfile
       context: .
-    container_name: dockerskeletal
+    container_name: docslaravelreact
     restart: always
     volumes:
       - ./src:/app
@@ -25,7 +25,7 @@ services:
   #     - MYSQL_ROOT_PASSWORD=password
   #     - MYSQL_PASSWORD=password
   #     - MYSQL_USER=user
-  #     - MYSQL_DATABASE=dockerskeletal
+  #     - MYSQL_DATABASE=docslaravelreact
   #   networks:
   #     - nginx_proxy-network
 
