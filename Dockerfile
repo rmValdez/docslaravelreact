@@ -6,6 +6,7 @@ COPY ./src/composer.lock /app/composer.lock
 
 RUN composer install --ignore-platform-reqs --no-interaction --no-plugins --no-scripts --prefer-dist
 
+# https://hub.docker.com/_/php ("  ")
 FROM public.ecr.aws/h1y8m9v5/nmsph-php8.2
 
 RUN docker-php-ext-install pdo_mysql

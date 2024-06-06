@@ -1,0 +1,48 @@
+{
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "dependencies": {
+      "@emotion/react": "^11.10.8",
+      "@emotion/styled": "^11.10.8",
+      "@mui/icons-material": "^5.14.19",
+      "@mui/lab": "^5.0.0-alpha.154",
+      "@mui/material": "^5.14.19",
+      "@mui/styled-engine-sc": "^5.12.0",
+      "@mui/x-data-grid": "^5.17.26",
+      "@mui/x-date-pickers": "^5.0.20",
+      "@tanstack/react-query": "^4.29.25",
+      "@vitejs/plugin-react-refresh": "^1.3.6",
+      "apisauce": "^3.0.0",
+      "date-fns": "^2.30.0",
+      "formik": "^2.2.9",
+      "html-to-image": "^1.11.11",
+      "jspdf": "^2.5.1",
+      "lodash": "^4.17.21",
+      "lottie-react": "^2.4.0",
+      "notistack": "^3.0.1",
+      "papaparse": "^5.4.1",
+      "react": "^18.2.0",
+      "react-big-calendar": "^1.8.5",
+      "react-data-grid": "^7.0.0-beta.41",
+      "react-dom": "^18.2.0",
+      "react-quill": "^2.0.0",
+      "react-router-dom": "^6.20.0",
+      "react-sweet-state": "^2.6.5",
+      "react-window": "^1.8.9",
+      "yup": "^0.32.11"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.39",
+      "@types/react-dom": "^18.2.17",
+      "@vitejs/plugin-react": "^4.2.0",
+      "axios": "^1.6.2",
+      "eslint": "^8.54.0",
+      "eslint-plugin-react": "^7.33.1",
+      "laravel-vite-plugin": "^0.8.1",
+      "vite": "^4.5.0"
+    }
+}
