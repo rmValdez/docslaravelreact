@@ -1,0 +1,18 @@
+Install framework
+ -- composer create-project --prefer-dist --no-plugins laravel/laravel test
+
+Dependencies
+
+a. Sanctum Dependencies / api routes
+ -- php artisan install:api
+ "https://laravel.com/docs/11.x/routing#api-routes"
+
+ self dependency for mockery
+ -- composer require --dev mockery/mockery
+
+b. Spatie role and permission
+ -- composer require spatie/laravel-permission
+ "https://spatie.be/docs/laravel-permission/v6/installation-laravel"
+
+c. Debug Bar
+ -- composer require barryvdh/laravel-debugbar --dev
