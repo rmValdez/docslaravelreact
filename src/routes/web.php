@@ -1,16 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Request;
 
-Route::get('/', function (Request $request) {
-    return view('home');
+Route::get('/', function () {
+    return ['Laravel' => app()->version()];
 });
 
-
-  // Route::middleware('oauth')->group(function () {\
-  //   Route::get('/{path?}', function () {
-  //     return view('home', [ ...$data ]);
-  //   })->where('path', '^(?!oauth\/).*');
-  // });
-  
+require __DIR__.'/auth.php';
