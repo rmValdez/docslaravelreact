@@ -16,7 +16,7 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: 'nmsapps.local',
+    host: 'docslaravelreact.local',
     strictPort: true,
     port: 5190, // you can replace this port with any port
   },
