@@ -1,0 +1,13 @@
+.quill .ql-toolbar {
+  background-color: #fff;
+  border-style: '1px solid black' !important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.ql-container {
+  border: '1px solid black' !important;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  min-height: 350px;
+}

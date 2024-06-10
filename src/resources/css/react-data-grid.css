@@ -1,0 +1,12 @@
+.rdg-dark .rdg-cell {
+  background-color: #1c2833;
+}
+.rdg-light .rdg-cell {
+  background-color: #F9F9F9;
+}
+.rdg-row .rdg-cell {
+  border-inline-end: none;
+}
+.rdg-header-row .rdg-cell {
+  border-inline-end: none;
+}
