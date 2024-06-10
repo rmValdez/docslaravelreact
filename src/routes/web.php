@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Auth;
 use Illuminate\Support\Facades\Request;
 
 Route::get('/', function (Request $request) {
