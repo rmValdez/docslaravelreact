@@ -1,52 +1,42 @@
 import { useEffect, useState } from "react";
 
-export const useRequesAction = (url, fileName = 'file') => {
+export const useRequestAction = (url, fileName = 'file') => {
   const [isLoading, setIsLoading] = useState(true);
-  
-  const [parseUrlData, setParseUrlData] = useState({
+  const [data, setData] = useState({
     urlData: null,
     fileData: null,
     blob: null,
-    type: null
+    type: null,
   });
-
   const [error, setError] = useState(null);
 
   useEffect(() => {
-  const fetchUrl = async () => {
-    try {
-      const response = await fetch(url);
-      if(!response.ok) {
-        const responseMessage = await response.json();
-        throw(responseMessage?.message ?? 'Error');
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          const errorMessage = await response.json();
+          throw new Error(errorMessage?.message || 'Error');
+        }
+        const type = response.headers.get('Content-Type');
+        const arrayBuffer = await response.arrayBuffer();
+        const blob = new Blob([arrayBuffer], { type });
+        const fileData = new File([blob], fileName, { type });
+        const urlData = URL.createObjectURL(blob);
+        setData({ urlData, fileData, blob, type });
+      } catch (error) {
+        setError(error);
+      } finally {
+        setIsLoading(false);
       }
-      const type = response.headers.get('Content-Type');
-      const arrayBuffer = await response.arrayBuffer();
-      setIsLoading(false);
-      const blob = new Blob([arrayBuffer], { type });
-      const dataFile = new File([blob], fileName, { type });
-      const dataURL = URL.createObjectURL(blob);
+    };
 
-      setParseUrlData({
-        urlData: dataURL,
-        fileData: dataFile,
-        blob: blob,
-        type: type
-      });
-    } catch (urlError) {
-      setError(urlError)
-      setIsLoading(false);
-    }
-  };
+    if (url) fetchData();
 
-  if(url) fetchUrl();
+    return () => {
+      if (data.urlData) URL.revokeObjectURL(data.urlData);
+    };
+  }, [url, fileName]);
 
-  return () => {
-    if (parseUrlData?.urlData) {
-      URL.revokeObjectURL(parseUrlData?.urlData);
-    }
-  };
-}, [url]);
-
-  return { isLoading, error, ...parseUrlData };
+  return { isLoading, error, ...data };
 };

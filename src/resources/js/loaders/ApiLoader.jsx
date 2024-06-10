@@ -19,10 +19,7 @@ export const ApiLoader = ({
   return (
     <Dialog open={isLoading}
       PaperProps={{
-        style: {
-          background: 'transparent',
-          boxShadow: 'none'
-        }
+        style: {background: 'transparent', boxShadow: 'none'}
       }}
     >
       <IconSpinner />

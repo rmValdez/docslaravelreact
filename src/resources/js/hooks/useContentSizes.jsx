@@ -4,35 +4,24 @@ import useWindowSize from './useWindowSize';
 import useStore from '../states/store';
 
 export const useContentSizes = () => {
-	const theme = useTheme();
-	const { height, width } = useWindowSize();
-	const [initialState, ] = useStore();
+  const theme = useTheme();
+  const { height, width } = useWindowSize();
+  const [{ drawerMode }] = useStore();
 
-	const contentSizes = useMemo(() => {
-		const uiSizesInt = {
-			topBarHeight: parseInt(theme.props.topBarHeight),
-			drawerOpenW: parseInt(theme.props.drawerWidthClose),
-			drawerW: parseInt(theme.props.drawerWidth)
-		};
-		const uiSizes = {
-			contentHeight: (height - (uiSizesInt.topBarHeight + 20)),
-			contentWidth: (
-				initialState.drawerMode == 'open' ?
-					(width - uiSizesInt.drawerW - 27)
-					:
-					(width - uiSizesInt.drawerOpenW - 27)
-			),
-			tableHeight: (height - (uiSizesInt.topBarHeight + 62)),
-			tableWidth: width > theme.breakpoints.values.mobile ? (
-				initialState.drawerMode == 'open' ?
-					(width - (uiSizesInt.drawerW + 58))
-					:
-					(width - (uiSizesInt.drawerOpenW + 60))
-			) : '100%',
-		};
-		return uiSizes;
-	}, [width, height, theme, initialState.drawerMode]);
-	return {
-		contentSizes
-	};
+  const contentSizes = useMemo(() => {
+    const topBarHeight = parseInt(theme.props.topBarHeight);
+    const drawerOpenW = parseInt(theme.props.drawerWidthClose);
+    const drawerW = parseInt(theme.props.drawerWidth);
+
+    const contentHeight = height - (topBarHeight + 20);
+    const contentWidth = drawerMode === 'open' ? width - drawerW - 27 : width - drawerOpenW - 27;
+    const tableHeight = height - (topBarHeight + 62);
+    const tableWidth = width > theme.breakpoints.values.mobile
+      ? drawerMode === 'open' ? width - drawerW - 58 : width - drawerOpenW - 60
+      : '100%';
+
+    return { contentHeight, contentWidth, tableHeight, tableWidth };
+  }, [width, height, theme, drawerMode]);
+
+  return { contentSizes };
 };
