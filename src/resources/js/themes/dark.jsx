@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { BREAKPOINTS, TYPOGRAPHIES, UIHELPER } from '../enums/themeEnums';
+import { BREAKPOINTS, TYPOGRAPHIES, UIHELPER } from '../appTools/enums/themeEnums';
 
 export const dark = createTheme({
   palette: {

@@ -2,12 +2,13 @@ import React, { Fragment, Suspense, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Loader } from './components/loaders/Loader';
-import RootProvider from './components/providers/RootProvider';
-// import { AppRoutes } from './routes/Routes';
+import { Loader } from './appTools/loaders/Loader';
+import RootProvider from './providers/RootProvider';
+import { ApplicationRoutes } from './routes/Routes';
 // import AuthProvider from './components/providers/AuthProvider';
 import { useUserInfo } from './states/store';
 import { Typography } from '@mui/material';
+
 const queryClient = new QueryClient();
 
 const Index = ({ auth, permission = [], role = [], department }) => {
@@ -24,7 +25,7 @@ const Index = ({ auth, permission = [], role = [], department }) => {
       <RootProvider>
         <QueryClientProvider client={queryClient}>
           <Suspense fallback={<Loader />}>
-            {/* <AppRoutes /> */}
+            <ApplicationRoutes />
             <Typography>
               Routes
             </Typography>
