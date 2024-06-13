@@ -26,9 +26,6 @@ const Index = ({ auth, permission = [], role = [], department }) => {
         <QueryClientProvider client={queryClient}>
           <Suspense fallback={<Loader />}>
             <ApplicationRoutes />
-            <Typography>
-              Routes
-            </Typography>
           </Suspense>
         </QueryClientProvider>
       </RootProvider>
