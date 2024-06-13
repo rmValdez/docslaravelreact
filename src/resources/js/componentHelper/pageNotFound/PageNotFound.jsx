@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Grid, Typography } from '@mui/material';
-import { LottieAnimation } from '../componentHelper/lottie/LottieAnimation';
+import { LottieAnimation } from '../lottie/LottieAnimation';
 import { useNavigate } from 'react-router-dom';
 
 const PageNotFound = () => {

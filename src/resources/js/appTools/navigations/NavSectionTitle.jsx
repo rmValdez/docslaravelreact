@@ -20,9 +20,9 @@ export const NavSectionTitle = ({section , hide ,children}) => {
             drawerMode == 'close' ?
               <Divider variant='middle' sx={classes.subheadDivider} flexItem />
               :
-              // <ListSubheader>
+              <ListSubheader>
               <Typography sx={{ fontSize: '12px',margin: '5px 0 0 10px' }}>{capitalizeFirst(section)}</Typography>
-              // </ListSubheader>
+              </ListSubheader>
           }
         </Fragment>
       }

@@ -16,11 +16,7 @@ const Base = () => {
   const theme = useTheme();
   const { classes } = useStyles();
   const [initialState, actions] = useStore();
-  const departmentOk = true;
-  const employeesOk = true;
-  const employeesData = [];
-  const departmentData = [];
- 
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleHoverIn = () => {
@@ -62,18 +58,6 @@ const Base = () => {
   }, [height, width, theme, initialState.drawerMode, tablesHeight]);
 
   useEffect(() => {
-    if (departmentOk) {
-      actions.setDepartmentList(departmentData);
-    }
-  }, [departmentOk]);
-
-  useEffect(() => {
-    if (employeesOk && Boolean(employeesData)) {
-      actions.setEmployeeList(employeesData);
-    }
-  }, [employeesOk, employeesData]);
-
-  useEffect(() => {
     if (initialState.loaderState && mobileOpen) {
       handleToggleMobileDrawer();
     }
@@ -81,9 +65,7 @@ const Base = () => {
 
   return (
     <Box sx={{ overflowY: 'hidden' }}>
-      <GlobalStyles styles={{
-        ...classes.global
-      }} />
+      <GlobalStyles styles={{...classes.global}} />
       <IconButton
         onClick={handleToggleMobileDrawer}
         edge="start"
@@ -105,9 +87,7 @@ const Base = () => {
         variant="temporary"
         open={mobileOpen}
         onClose={() => handleToggleMobileDrawer()}
-        ModalProps={{
-          keepMounted: true,
-        }}
+        ModalProps={{ keepMounted: true }}
         sx={{
           display: { mobile: 'block', tablet: 'none' },
           '& .MuiDrawer-paper': { boxSizing: 'border-box', width: theme.props.drawerWidth },

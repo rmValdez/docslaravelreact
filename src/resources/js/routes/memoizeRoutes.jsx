@@ -6,5 +6,4 @@ export function MEMOIZE_PAGE_LIST() {
     const ROUTE_LIST = [ ...PAGE_LIST ];
       return ROUTE_LIST ?? [];
   }, [PAGE_LIST]);
-  
 }

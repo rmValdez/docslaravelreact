@@ -10,7 +10,7 @@ const SideBar = () => {
       <Box sx={{
         overflowY: 'auto',
         overflowX: 'hidden',
-        height: '100%'
+        height: '100%',
       }}
       >
         <DrawerTitle />

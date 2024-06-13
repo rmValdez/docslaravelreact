@@ -8,11 +8,9 @@ import { stripDynamicPath } from '../../appTools/enums/routeHelper';
 import { NavBox, NavInnerBox, NavMySectionBox } from './NavBox';
 import { sortMultidimensional } from '../../helpers/arrayHelpers';
 import { useUserInfo } from '../../states/store';
+import { PAGE_LIST } from '../../routes/routes/routesOne';
 
-const NO_SECTION_PAGE_LIST = [];
 const PAGE_SECTIONS = [];
-const PAGE_LIST = [];
-const MY_ACCOUNT_PAGE_LIST = [];
 
 const getGroupSection = (sect, hasPermission) => {
   const filteredPage = [...PAGE_LIST] ?? [];
@@ -74,7 +72,7 @@ export const NavigationList = () => {
   return (
     <NavBox>
       {
-        NO_SECTION_PAGE_LIST.map((page, idx) => {
+        PAGE_LIST.map((page, idx) => {
           if (hasPermission(page.permission)) {
             return (<NavItem
               key={`${page.key}-${idx}`}
@@ -90,7 +88,7 @@ export const NavigationList = () => {
       <NavSectionTitle section={'Sections Name'}>
         <NavMySectionBox>
           {
-            MY_ACCOUNT_PAGE_LIST.map((page, idx) => {
+            PAGE_LIST.map((page, idx) => {
                 if (page?.groupBy != undefined) {
                   return (
                     <NavNested
