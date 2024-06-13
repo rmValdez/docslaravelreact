@@ -1,13 +1,12 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Box, Button, Grid, IconButton, Stack, Typography } from '@mui/material';
 import { Gravatar } from '../avatar/Avatars';
-import useStore from '../../../states/store';
-import { ThemeSwitcher } from '../iconButton/ThemeSwitcher';
-import { ArrowDownIcon, ArrowUpIcon, CloseIcon, Logout, PersonIcon, PlatformIcon } from '../../icons/MaterialIcons';
-import { TooltipPopover } from '../tooltip/TooltipPopover';
-import { getFirstWord, truncateText } from '../../../helpers/stringHelpers';
-import { CustomIconButton } from '../iconButton/CustomIconButton';
-import Platforms from '../../../pages/widgets/platforms/Platforms';
+import useStore from '../../states/store';
+import { ThemeSwitcher } from '../../componentHelper/iconButton/ThemeSwitcher';
+import { TooltipPopover } from '../../componentHelper/tooltip/TooltipPopover';
+import { getFirstWord, truncateText } from '../../helpers/stringHelpers';
+import { CustomIconButton } from '../../componentHelper/iconButton/CustomIconButton';
+import { ArrowDownwardIcon, ArrowUpwardIcon, CloseIcon, LogoutIcon, PersonIcon } from '@mui/icons-material';
 
 export const SideDrawerOptions = () => {
   const [{ drawerMode, userInfo }, { logoutUser }] = useStore();
@@ -53,7 +52,7 @@ export const SideDrawerOptions = () => {
                             tooltip={'Profile'}
                             onClick={() => setShowMyPlatforms(false)}
                           /> : <CustomIconButton
-                            icon={<PlatformIcon sx={{ color: '#FFF' }} />}
+                            icon={<PersonIcon/>}
                             tooltip={'Platforms'}
                             onClick={() => setShowMyPlatforms(true)}
                           />
@@ -70,7 +69,7 @@ export const SideDrawerOptions = () => {
                     </Grid>
                     <Grid item sx={{ width: (theme) => `calc(${theme.props.drawerWidth} - 25px)`, height: 145 }}>
                       {
-                        showMyPlatforms ? <Platforms />
+                        showMyPlatforms ? <Stack />
                           : <Stack alignItems={'center'} mb={2}>
                             <Gravatar avatar={userInfo?.md5_company_email} border={'0px'} width={70} height={70} />
                             <Typography variant='h6'>{userInfo?.first_name}</Typography>
@@ -84,7 +83,7 @@ export const SideDrawerOptions = () => {
                         fullWidth
                         onClick={() => onLogout()}
                         color='error'
-                        startIcon={<Logout />}
+                        startIcon={<LogoutIcon />}
                       >
                         Logout
                       </Button>
@@ -123,7 +122,7 @@ export const SideDrawerOptions = () => {
                         </Stack>
                       </Grid>
                       <Grid item mt={0.5}>
-                        {popOverState ? <ArrowDownIcon /> : <ArrowUpIcon />}
+                        {popOverState ? <ArrowDownwardIcon /> : <ArrowUpwardIcon />}
                       </Grid>
                     </Grid>
                   </Button>

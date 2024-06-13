@@ -1,0 +1,1 @@
+export const calculateRowHeight = (params, key) => 30 + params?.model?.[key]?.length * 15;

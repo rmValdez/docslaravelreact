@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import { ListItemIcon, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { NmsListItem } from '../generic/listitem/ListItem';
+import { ListItemComponent } from '../../componentHelper/listitem/ListItem';
 import { useUIStore } from '../../states/store';
 
 export const NavItem = (props) => {
   const [{ drawerMode, currentBreakPoint },] = useUIStore()
   const { listKey, title, path, linkIcn, activeNav = false } = props;
   return (
-    <NmsListItem key={listKey} component={NavLink} to={path} selected={activeNav}
+    <ListItemComponent key={listKey} component={NavLink} to={path} selected={activeNav}
       sx={{
         '&.Mui-selected': {
           backgroundColor: (drawerMode == 'close' && currentBreakPoint != 'mobile') && 'transparent',
@@ -29,6 +29,6 @@ export const NavItem = (props) => {
           <Fragment />
       }
       <ListItemText primary={title} />
-    </NmsListItem>
+    </ListItemComponent>
   );
 }; 

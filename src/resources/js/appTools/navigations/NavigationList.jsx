@@ -1,17 +1,18 @@
 import React, { Fragment, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Box, Divider } from '@mui/material';
-import { PAGE_SECTIONS } from '../../enums/pageSections/coreSections';
-import { PAGE_LIST } from '../../routes/corePages';
 import { NavItem } from './NavItem';
 import { NavSectionTitle } from './NavSectionTitle';
 import { NavNested } from './NavNested';
-import { NO_SECTION_PAGE_LIST } from '../../routes/noSection/noSection';
-import { stripDynamicPath } from '../../helpers/routeHelper';
+import { stripDynamicPath } from '../../appTools/enums/routeHelper';
 import { NavBox, NavInnerBox, NavMySectionBox } from './NavBox';
-import { MY_ACCOUNT_PAGE_LIST } from '../../routes/myAccount/myAccountRoutes';
 import { sortMultidimensional } from '../../helpers/arrayHelpers';
 import { useUserInfo } from '../../states/store';
+
+const NO_SECTION_PAGE_LIST = [];
+const PAGE_SECTIONS = [];
+const PAGE_LIST = [];
+const MY_ACCOUNT_PAGE_LIST = [];
 
 const getGroupSection = (sect, hasPermission) => {
   const filteredPage = [...PAGE_LIST] ?? [];

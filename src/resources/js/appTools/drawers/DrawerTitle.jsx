@@ -1,8 +1,8 @@
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
 import { useUIStore } from '../../states/store';
-import { useLocalStorage } from '../../../hooks/useLocalStorage';
-import { DRAWER_DEFAULT, DRAWER_KEY } from '../../../enums/enums';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { DRAWER_DEFAULT, DRAWER_KEY } from '../../appTools/enums/enums';
 
 export const DrawerTitle = () => {
   const [{ drawerMode, contentBoxWidth }, { setDrawerMode }] = useUIStore();

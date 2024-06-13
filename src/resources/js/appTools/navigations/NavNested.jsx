@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { Collapse, List, ListItemIcon, ListItemText } from '@mui/material';
 import { useLocation } from 'react-router-dom';
-import { ExpandLess, ExpandMore } from '../icons/MaterialIcons';
 import { useUIStore } from '../../states/store';
-import { NmsListItem } from '../generic/listitem/ListItem';
+import { ListItemComponent } from '../../componentHelper/listitem/ListItem';
 import { NavItem } from './NavItem';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export const NavNested = ({ page, handleNestedChange, openNested }) => {
   const [{ drawerMode },] = useUIStore();
@@ -14,7 +15,7 @@ export const NavNested = ({ page, handleNestedChange, openNested }) => {
     <Fragment>
       {
         page?.main ?
-          <NmsListItem onClick={() => handleNestedChange(page.groupBy)} sx={{maxHeight: '32px'}}>
+          <ListItemComponent onClick={() => handleNestedChange(page.groupBy)} sx={{maxHeight: '32px'}}>
             <ListItemIcon>
               {
                 page.icon
@@ -23,11 +24,11 @@ export const NavNested = ({ page, handleNestedChange, openNested }) => {
             <ListItemText primary={page.title} />
             {
               openNested === page.groupBy ?
-                <ExpandLess />
+                <ExpandLessIcon />
                 :
-                <ExpandMore />
+                <ExpandMoreIcon />
             }
-          </NmsListItem>
+          </ListItemComponent>
           :
           <Fragment />
       }
