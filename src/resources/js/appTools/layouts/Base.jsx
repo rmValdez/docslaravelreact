@@ -16,8 +16,11 @@ const Base = () => {
   const theme = useTheme();
   const { classes } = useStyles();
   const [initialState, actions] = useStore();
-
-
+  const departmentOk = true;
+  const employeesOk = true;
+  const employeesData = [];
+  const departmentData = [];
+ 
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleHoverIn = () => {

@@ -1,12 +1,10 @@
-import { PAGE_LIST_ONE } from './route/ComponentOnePage';
-import { PAGE_LIST_TWO } from './route/ComponentTwoPage';
+import { PAGE_LIST } from './routes/routesOne';
 import { useMemo } from 'react';
 
 export function MEMOIZE_PAGE_LIST() {
-
   return useMemo(() => {
-    const ROUTE_LIST = [ ...PAGE_LIST_ONE, ...PAGE_LIST_TWO ];
+    const ROUTE_LIST = [ ...PAGE_LIST ];
       return ROUTE_LIST ?? [];
-  }, [PAGE_LIST_ONE, PAGE_LIST_TWO]);
+  }, [PAGE_LIST]);
   
 }

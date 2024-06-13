@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { ListItemIcon, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { ListItemComponent } from '../../componentHelper/listitem/ListItem';
+import { ListItemComponent } from '../../componentHelper/listitem/ListItemComponent';
 import { useUIStore } from '../../states/store';
 
 export const NavItem = (props) => {

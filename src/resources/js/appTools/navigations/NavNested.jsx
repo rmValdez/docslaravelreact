@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Collapse, List, ListItemIcon, ListItemText } from '@mui/material';
 import { useLocation } from 'react-router-dom';
 import { useUIStore } from '../../states/store';
-import { ListItemComponent } from '../../componentHelper/listitem/ListItem';
+import { ListItemComponent } from '../../componentHelper/listitem/ListItemComponent';
 import { NavItem } from './NavItem';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';

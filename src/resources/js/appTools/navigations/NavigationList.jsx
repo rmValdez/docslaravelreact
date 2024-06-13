@@ -87,7 +87,7 @@ export const NavigationList = () => {
           }
         })
       }
-      <NavSectionTitle section={'My Account'}>
+      <NavSectionTitle section={'Sections Name'}>
         <NavMySectionBox>
           {
             MY_ACCOUNT_PAGE_LIST.map((page, idx) => {

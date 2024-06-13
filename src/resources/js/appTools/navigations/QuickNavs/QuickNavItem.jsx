@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { ListItemIcon, ListItemText } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { ListItem } from '../../componentHelper/listitem/ListItem';
+import { ListItemComponent } from '../../../componentHelper/listitem/ListItemComponent';
 
 export const QuickNavItem = (props) => {
   const { listKey, title, path, linkIcn, activeNav = false, closeQuickNav, ...others} = props;
   
   return (
-    <ListItem
+    <ListItemComponent
       key={listKey}
       component={NavLink}
       to={path}
@@ -31,6 +31,6 @@ export const QuickNavItem = (props) => {
         <Fragment />
       }
       <ListItemText primary={title} />
-    </ListItem>
+    </ListItemComponent>
   );
 }; 

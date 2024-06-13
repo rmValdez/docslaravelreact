@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Box, Stack, Tooltip, Typography } from '@mui/material';
 import { fullNameHelper } from '../../helpers/stringHelpers';
-import { NmsCardComponent } from '../../componentHelper/cards/Cards';
+import { CardComponent } from '../../componentHelper/cards/Cards';
 
 export const Gravatar = (props) => {
   const {
@@ -37,7 +37,7 @@ export const ManualGravatar = (props) => {
   const { userInfo, } = props;
   return (
     <Box sx={{borderRadius: '5px', margin: '5px', display: 'flex',minWidth: '15vw'}}>      
-      <NmsCardComponent sx={{width:'350px'}}>
+      <CardComponent sx={{width:'350px'}}>
         <Box display={'flex'}>
           <Gravatar border={'2px solid #ffffff00'} avatar={userInfo?.md5_company_email ?? 'asdasd123aZcz'} height={'60px'} width={'60px'}/>
           <Stack marginLeft={'10px'}>
@@ -49,7 +49,7 @@ export const ManualGravatar = (props) => {
             </Typography>
           </Stack>
         </Box>
-      </NmsCardComponent>
+      </CardComponent>
     </Box>
   );
 };

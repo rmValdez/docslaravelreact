@@ -19,7 +19,7 @@ export const DrawerTitle = () => {
     <Stack onClick={() => handleDrawerChange()} sx={{cursor: 'pointer'}} direction={'row'} alignItems={'center'} spacing={1} justifyContent={'center'}>
       <Typography variant='h6' sx={{
         display: drawerMode == 'hovered' || drawerModeLocal == 'close' && 'none'
-      }}>{'NMSAPPS'}</Typography>
+      }}>{'Company Name'}</Typography>
     </Stack>
   );
 };

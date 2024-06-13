@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Box, TextField } from '@mui/material';
-import { CustomDialog } from '../../generic/dialogs/CustomDialog';
-import { PAGE_LIST } from '../../../routes/corePages';
+import { CustomDialog } from '../../../componentHelper/dialogs/CustomDialog';
+import { PAGE_LIST } from '../../../routes/routes/routesOne';
 import { frontendSearchSingle } from '../../../helpers/stringHelpers';
-import { FindPagesIcon } from '../../icons/MaterialIcons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { QuickNavItem } from './QuickNavItem';
 import { useUIStore, useUserInfo } from '../../../states/store';
 import { sortMultidimensional } from '../../../helpers/arrayHelpers';
+import FindInPageIcon from '@mui/icons-material/FindInPage';
 
 const QuickNav = () => {
   const [quickNavDialog, setQuickNavDialog] = useState(false);
@@ -96,7 +96,7 @@ const QuickNav = () => {
   return (
     <CustomDialog dialogStatus={quickNavDialog} handleCloseDialog={() => handleClose()} title={'Page Search'} dialogSize={'tablet'}>
       <TextField value={search} onChange={(e) => setSearch(e.target.value)}
-        InputProps={{ endAdornment: <FindPagesIcon />, }} inputProps={{
+        InputProps={{ endAdornment: <FindInPageIcon />, }} inputProps={{
           autoComplete: 'off'
         }}
         autoFocus

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, CardContent, useTheme } from '@mui/material';
-import { NmsCard } from '../generic/cards/Cards';
+import { CardComponent } from '../generic/cards/Cards';
 import { UIStore } from '../../states/store';
 
 const DashboardLayout = (props) => {
@@ -25,7 +25,7 @@ const DashboardLayout = (props) => {
               tablet: 'calc(100vh - 30px)'
             }}
             {...others}>
-            <NmsCard variant='outlined' sx={
+            <CardComponent variant='outlined' sx={
               {
                 height: '100%',
                 overflow: 'auto',
@@ -36,7 +36,7 @@ const DashboardLayout = (props) => {
               <CardContent sx={{padding: '0px'}}>
                 {children}
               </CardContent>
-            </NmsCard>
+            </CardComponent>
           </Box>
         );
       }
