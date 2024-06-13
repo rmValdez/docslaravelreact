@@ -5,12 +5,12 @@ const PageNotFound = lazy(() => import('../appTools/PageNotFound'));
 import { MEMOIZE_PAGE_LIST } from './memoizeRoutes';
 
 export const ApplicationRoutes = () => {
-  console.log('MEMOIZE_ROUTES',MEMOIZE_PAGE_LIST());
+  const PAGE_LIST = MEMOIZE_PAGE_LIST();
   return (
     <Routes>
       <Route element={<Base />}>
         {
-          [].map((page, idx) => {
+          PAGE_LIST.map((page, idx) => {
             if (!page?.component) return;
               return (
                 <Route
