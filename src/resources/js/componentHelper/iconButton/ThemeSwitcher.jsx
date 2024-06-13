@@ -3,7 +3,7 @@ import { useUIStore } from '../../states/store';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { IconButton, Tooltip } from '@mui/material';
 import { THEME_KEY } from '../../appTools/enums/enums';
-import { DarkModeRoundedIcon, LightModeRoundedIcon } from '@mui/icons-material';
+import { LightMode, ModeNight } from '@mui/icons-material';
 
 export const ThemeSwitcher = () => {
   const [, setDefaultTheme] = useLocalStorage(THEME_KEY);
@@ -30,7 +30,7 @@ export const ThemeSwitcher = () => {
     <Tooltip title={theme == 'light' ? 'Dark Mode' : 'Light Mode'}>
       <IconButton onClick={() => handleThemeChange(theme)}>
         {
-          theme == 'light' ? <DarkModeRoundedIcon sx={{ color: '#AED6F1' }}/> : <LightModeRoundedIcon sx={{ color: '#F7DC6F' }}/>
+          theme == 'light' ? <ModeNight sx={{ color: '#AED6F1' }}/> : <LightMode sx={{ color: '#F7DC6F' }}/>
         }
       </IconButton>
     </Tooltip>

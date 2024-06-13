@@ -2,9 +2,10 @@ import React, { lazy } from 'react';
 import { Route, Routes, } from 'react-router-dom';
 import Base from '../appTools/layouts/Base';
 const PageNotFound = lazy(() => import('../appTools/PageNotFound'));
-import MEMOIZE_PAGE_LIST from './memoizeRoutes';
+import { MEMOIZE_PAGE_LIST } from './memoizeRoutes';
 
 export const ApplicationRoutes = () => {
+  console.log('MEMOIZE_ROUTES',MEMOIZE_PAGE_LIST());
   return (
     <Routes>
       <Route element={<Base />}>

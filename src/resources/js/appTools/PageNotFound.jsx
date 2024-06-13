@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Grid, Typography } from '@mui/material';
-import { LottieAnimation } from '../../../components/generic/lottie/LottieAnimation';
-import moonDog from '../../../../../public/jsonAnimation/moon-dog.json';
+import { LottieAnimation } from '../componentHelper/lottie/LottieAnimation';
 import { useNavigate } from 'react-router-dom';
 
 const PageNotFound = () => {
@@ -10,7 +9,7 @@ const PageNotFound = () => {
   return (
     <Grid container direction={'column'} alignItems={'center'}>
       <Grid item>
-        <LottieAnimation animation={moonDog} style={{ height: '50vh', width: '100%' }} />
+        {/* <LottieAnimation animation={moonDog} style={{ height: '50vh', width: '100%' }} /> */}
       </Grid>
       <Grid container item direction={'column'} alignItems={'center'} spacing={2}>
         <Grid item>

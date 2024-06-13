@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment, useState } from 'react';
+import React, { useEffect, Fragment, useState, lazy } from 'react';
 import { Box, Drawer, GlobalStyles, IconButton, useTheme } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { MemoizeDrawer } from '../../appTools/drawers/SideDrawer';

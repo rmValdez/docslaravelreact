@@ -6,7 +6,11 @@ import { ThemeSwitcher } from '../../componentHelper/iconButton/ThemeSwitcher';
 import { TooltipPopover } from '../../componentHelper/tooltip/TooltipPopover';
 import { getFirstWord, truncateText } from '../../helpers/stringHelpers';
 import { CustomIconButton } from '../../componentHelper/iconButton/CustomIconButton';
-import { ArrowDownwardIcon, ArrowUpwardIcon, CloseIcon, LogoutIcon, PersonIcon } from '@mui/icons-material';
+import LogoutIcon from '@mui/icons-material/Logout';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import PersonIcon from '@mui/icons-material/Person';
 
 export const SideDrawerOptions = () => {
   const [{ drawerMode, userInfo }, { logoutUser }] = useStore();
@@ -60,7 +64,7 @@ export const SideDrawerOptions = () => {
                       </Grid>
                       <Grid item>
                         <CustomIconButton
-                          icon={<CloseIcon />}
+                          icon={<CloseOutlinedIcon />}
                           tooltip={'Close'}
                           onClick={handleClosePopover}
                           sx={{ color: '#FFF' }}
