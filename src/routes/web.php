@@ -1,14 +1,22 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Mockery\Undefined;
 
 // Route::middleware('oauth')->group(function () {
   Route::get('/{path?}', function () {
+    // dd(Auth::user());
+    $auth = json_encode(['first_name' => 'John','last_name'=> 'Mary','middle_name'=> 'Peter']);
+    $roles = json_encode(['first_name' => 'John','last_name'=> 'Mary','middle_name'=> 'Peter']);
+    $permission = json_encode(['test']);
+    $department = json_encode(['name' => 'John','last_name'=> 'Mary','middle_name'=> 'Peter']);
+
     return view('home', [
-      'auth' => '["John","Mary","Peter","Sally"]',
-      'roles' => '["John","Mary","Peter","Sally"]',
-      'permission' => '["John","Mary","Peter","Sally"]',
-      'department' => '["John","Mary","Peter","Sally"]'
+      'auth' => 'null',
+      'roles' => $roles,
+      'permission' => $permission,
+      'department' => $department
     ]);
   })->where('path', '^(?!oauth\/).*');
 // });

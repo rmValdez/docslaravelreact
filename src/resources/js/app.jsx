@@ -7,7 +7,6 @@ import RootProvider from './providers/RootProvider';
 import { ApplicationRoutes } from './routes/Routes';
 // import AuthProvider from './components/providers/AuthProvider';
 import { useUserInfo } from './states/store';
-import { Typography } from '@mui/material';
 
 const queryClient = new QueryClient();
 

@@ -6,6 +6,17 @@ export const replaceAllText = (text = '', replace = '', replacement = '') => {
   textToReplace = textToReplace?.replaceAll(replace, replacement);
   return textToReplace;
 };
+
+export const generateRandomAlphaNumericString = (length) => {
+  const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let result = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    result += charset.charAt(randomIndex);
+  }
+  return result;
+};
+
 export const snakeToCapitalized = (role) => role ? role.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
 export const kebabToCapitalized = (text) => text ? text.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : '';
 export const capitalizeFirst = (str) => str ? str.replace(/^\w/, c => c.toUpperCase()) : '';
