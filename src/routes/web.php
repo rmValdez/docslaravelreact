@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Mockery\Undefined;
 
 // Route::middleware('oauth')->group(function () {
   Route::get('/{path?}', function () {

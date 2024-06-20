@@ -11,20 +11,15 @@ export const ApplicationRoutes = () => {
   const PAGE_LIST = MEMOIZE_PAGE_LIST();  
 
   const checkUser = async () => {
-    // const result = await fetchMyInfo();
-    // if (result.ok) {
-    //   updateUser(result?.data?.data);
-    // } else {
-      if (location.pathname !== "/login" && !location.pathname.startsWith("/forgot-password/")) {
-        window.location.href = "/login";
-      }
-    // }
-    // setLoading(false);
+      // if (location.pathname !== "/login" && !location.pathname.startsWith("/forgot-password/")) {
+      //   window.location.href = "/login";
+      // }
   };
 
   useEffect(()=>{
     if(Object.entries(userInfo ?? {}).length === 0) {
-      checkUser();
+      // checkUser();
+      console.log('Un-authenticated');
     }
   },[userInfo]);
   
